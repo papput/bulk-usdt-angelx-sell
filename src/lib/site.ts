@@ -2,10 +2,18 @@ function telegramLabel(handle: string) {
   return handle.startsWith("@") ? handle : `@${handle}`;
 }
 
+function telegramHref(handle: string) {
+  return `https://t.me/${handle.replace(/^@/, "")}`;
+}
+
 const telegramHandle =
   process.env.NEXT_PUBLIC_TELEGRAM_HANDLE ?? "@OfficialAngelX";
 const telegramUrl =
-  process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/officiallangelx";
+  process.env.NEXT_PUBLIC_TELEGRAM_URL ?? telegramHref(telegramHandle);
+const telegramChannelUrl =
+  process.env.NEXT_PUBLIC_TELEGRAM_CHANNEL_URL ?? "https://t.me/officiallangelx";
+const telegramChannelHandle =
+  process.env.NEXT_PUBLIC_TELEGRAM_CHANNEL_HANDLE ?? "@officiallangelx";
 
 export const siteConfig = {
   name: "Angelx",
@@ -20,8 +28,26 @@ export const siteConfig = {
     handle: telegramHandle,
     href: telegramUrl,
     label: telegramLabel(telegramHandle),
+    channel: {
+      handle: telegramChannelHandle,
+      href: telegramChannelUrl,
+      label: telegramLabel(telegramChannelHandle),
+    },
   },
 };
+
+export const telegramContacts = [
+  {
+    href: siteConfig.telegram.href,
+    label: siteConfig.telegram.label,
+    kind: "Direct message",
+  },
+  {
+    href: siteConfig.telegram.channel.href,
+    label: siteConfig.telegram.channel.label,
+    kind: "Official channel",
+  },
+];
 
 export const navLinks = [
   { href: "/", label: "Home" },
@@ -142,7 +168,7 @@ export const faqs = [
   {
     question: "How do I start a trade?",
     answer:
-      `Connect on Telegram with ${telegramLabel(telegramHandle)}. Our customer service team processes trades manually.`,
+      `Message ${telegramLabel(telegramHandle)} on Telegram for a personal chat, or join the official channel.`,
   },
   {
     question: "Is support available at night?",

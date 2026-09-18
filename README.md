@@ -2,7 +2,10 @@
 
 SSR Next.js frontend for Angelx. Cream yellow background (`#ffefbb`), black typography, and `#ffc107` accents, with the Angelx logo in the header, footer, and favicon.
 
-Telegram contact is configured through environment variables and points to [Official AngelX](https://t.me/officiallangelx).
+Telegram is configured through environment variables:
+
+- Direct messages: [@OfficialAngelX](https://t.me/OfficialAngelX)
+- Official channel: [t.me/officiallangelx](https://t.me/officiallangelx)
 
 ## Stack
 
@@ -35,7 +38,9 @@ Copy `.env.example` to `.env` and set:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://bulkusdt.in
 NEXT_PUBLIC_TELEGRAM_HANDLE=@OfficialAngelX
-NEXT_PUBLIC_TELEGRAM_URL=https://t.me/officiallangelx
+NEXT_PUBLIC_TELEGRAM_URL=https://t.me/OfficialAngelX
+NEXT_PUBLIC_TELEGRAM_CHANNEL_HANDLE=@officiallangelx
+NEXT_PUBLIC_TELEGRAM_CHANNEL_URL=https://t.me/officiallangelx
 ```
 
 ## Scripts

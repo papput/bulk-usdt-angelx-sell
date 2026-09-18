@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
-import { CheckCircleIcon, ChevronRightIcon, TelegramIcon } from "@/components/icons";
+import { CheckCircleIcon } from "@/components/icons";
+import { TelegramContacts } from "@/components/telegram-contacts";
 import { siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
@@ -31,22 +32,7 @@ export function SiteFooter() {
             <CheckCircleIcon className="h-4 w-4 text-[#ffc107]" />
             Angelx Customer Service Team
           </p>
-          <ul className="space-y-3">
-            <li>
-              <a
-                href={siteConfig.telegram.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-[#f3e6b8] bg-[#ffefbb] p-3 transition hover:bg-[#ffe6a3]"
-              >
-                <span className="flex items-center gap-3 font-medium text-black">
-                  <TelegramIcon className="h-6 w-6 text-[#ffc107]" />
-                  {siteConfig.telegram.label}
-                </span>
-                <ChevronRightIcon className="h-3 w-3 text-neutral-500 transition-transform group-hover:translate-x-1 group-hover:text-black" />
-              </a>
-            </li>
-          </ul>
+          <TelegramContacts />
         </div>
       </div>
 
